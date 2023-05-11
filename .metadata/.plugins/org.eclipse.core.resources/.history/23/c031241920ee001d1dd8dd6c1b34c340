@@ -1,0 +1,49 @@
+package study;
+
+public class lamda {
+
+  public static void main(String[] args) {
+
+    // 람다식1(반환자료형이 없는 경우)
+    Lamda01Function f = () -> {
+      System.out.println("람다식1테스트 출력1");
+      System.out.println("람다식1테스트 출력2");
+    };
+    
+    
+    f.test();
+    
+    // 람다식2(반환자료형이 있는 경우)
+    Lamda02Function f2 = (a) -> a;
+    System.out.println(f2.test("람다식2테스트 출력"));
+
+    
+    // 익명 내부클래스
+    Lamda01Function f3 = new Lamda01Function() {
+
+      @Override
+      public void test() {
+
+        System.out.println("람다식1테스트 출력3");
+        
+      }
+      
+    };
+    
+    f3.test();
+    
+  }
+
+}
+
+@FunctionalInterface    // 단 하나의 추상메서드를 갖고 있는 인터페이스.  올바르게 함수형 인터페이스를 정의하였는지 체크해준다.
+interface Lamda01Function{
+    public void test();
+//    public abstract String run(); // 추상메서드가 두개이므로 @FunctionalInterface  조건에 만족하지 않아서 에러남
+}
+
+
+@FunctionalInterface 
+interface Lamda02Function{
+    public String test(String a);
+}

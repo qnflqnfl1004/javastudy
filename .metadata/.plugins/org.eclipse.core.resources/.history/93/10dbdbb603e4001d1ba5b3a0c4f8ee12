@@ -1,0 +1,23 @@
+/*
+ * Copyright © 2022 Dweax. All rights reserved.
+ */
+
+package com.in28minutes.springboot.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+/**
+ * 
+ *
+ * @author user
+ * @since 2023. 4. 26.
+ */
+class CourseTest {
+
+  @Test
+  void test() {
+    fail("Not yet implemented");
+  }
+
+}

@@ -1,0 +1,13 @@
+package study;
+
+public class lambda4 {
+
+  public static void main(String[] args) {
+
+  }
+
+}
+
+  public void printWithLambda() {
+    System.out.println(this);
+  }

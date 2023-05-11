@@ -1,0 +1,33 @@
+package study;
+
+public class lamda {
+
+  public static void main(String[] args) {
+
+``  
+    Lamda01Function f2 = new Lamda01Function() {
+
+      @Override
+      public void test() {
+
+        System.out.println("람다01테스트 출력");
+        
+      }
+      
+    };
+    
+    f2.test();
+    
+  }
+
+}
+
+@FunctionalInterface    // 단 하나의 추상메서드를 갖고 있는 인터페이스.  올바르게 함수형 인터페이스를 정의하였는지 체크해준다.
+interface Lamda01Function{
+    public void test();
+//    public abstract String run(); // 추상메서드가 두개이므로 @FunctionalInterface  조건에 만족하지 않아서 에러남
+}
+
+@FunctionalInterface    
+interface Lamda02Function{
+    public void test();

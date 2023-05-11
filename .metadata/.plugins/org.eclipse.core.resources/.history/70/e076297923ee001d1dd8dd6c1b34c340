@@ -1,0 +1,15 @@
+package study;
+
+public class lamda2 {
+
+  public static void main(String[] args) {
+      Runnable r = new Runnable() {
+        
+        @Override
+        public void run() {
+            System.out.println("익명 내부 클래스");
+        }
+      };
+  }
+
+}

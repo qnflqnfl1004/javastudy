@@ -1,0 +1,9 @@
+package stream;
+
+public class stream1 {
+
+  public static void main(String[] args) {
+
+  }
+
+}

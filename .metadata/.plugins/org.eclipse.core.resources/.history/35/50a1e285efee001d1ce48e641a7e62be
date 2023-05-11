@@ -1,0 +1,7 @@
+package study;
+
+public class lambda5 {
+  public static void main(String[] args) {
+    
+  }
+}

@@ -1,0 +1,52 @@
+package study;
+
+public class lamda4 {
+  
+  public static void main(String[] args) {
+    /*
+     * 1. 익명클래스의 this는 익명클래스 자신을 가리키지만 람다에서의 this는 선언된 클래스를 가리킨다.
+     *    람다는 은닉 변수(Shadow Variable)을 허용하지 않는다.
+     *    익명 클래스는 변수를 선언하여 사용할 수 있지만 람다는 이를 허용하지 않습니다.
+     * 2. 람다는 인터페이스에 반드시 하나의 메서드만 가지고 있어야 한다.
+     *    인터페이스에 @FunctionalInterface 어노테이션을 붙이면 두개 이상의 추상 메서드가
+     *    선언되었을 경우 컴파일 에러를 발생시킨다.
+     */
+  }
+}
+@FunctionalInterface
+interface Dweax {
+    void print();
+}
+@FunctionalInterface
+interface Hello {
+    void print();
+}
+
+public static void action(Dweax dweax) {
+    dweax.print();
+}
+
+public static void action(Hello hello) {
+    hello.print();
+}
+
+public void function() {
+    // 익명클래스는 다음과 같이 타입이 지정되어 의미가 분명함
+    action(new Dweax() {
+        public void print() {
+          System.out.println("Dweax");
+        }
+    });
+    
+    // 람다는 Dweax 객체인지 Hello 객체인지 불분명함
+    action(() -> System.out.println("Dweax"));
+}
+
+
+
+
+
+
+
+
+

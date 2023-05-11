@@ -1,0 +1,32 @@
+package study;
+
+import java.util.Comparator;
+
+public class lamda2 {
+
+  public static void main(String[] args) {
+    
+//    익명 내부 클래스1
+      Runnable r = new Runnable() {
+        
+        @Override
+        public void run() {
+            System.out.println("익명 내부 클래스");
+        }
+      };
+      
+      r.run();
+      
+      
+//    익명 내부 클래스2
+      Comparator<Integer> comp = new Comparator<Integer>() {
+
+        @Override
+        public int compare(Integer o1, Integer o2) {
+          return o1.compareTo(o2);  // o1 은 Integer 이고, Integer는  Comparable을 구현하고
+        }                           // Comparable 에 comparaTo 메서드가 있다.
+      };
+      
+      System.out.println(comp.compare(2, 1));
+  }
+}

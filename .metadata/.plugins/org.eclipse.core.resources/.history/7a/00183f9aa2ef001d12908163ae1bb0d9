@@ -1,0 +1,46 @@
+package stream;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class stream1 {
+
+  public static void main(String[] args) {
+    int[] arr = {1, 1, 10, 30, 2};
+    List<Integer> list = new ArrayList<>();
+    Set<Integer> set = new HashSet<>();
+    
+    /* Stream을 쓰지 않았을 경우 */
+    // 배열의 내용을 set 담습니다
+    for (int i = 0; i < arr.length; i++) {
+        set.add(arr[i]);
+    }
+    // set을 iterator 안에 담습니다.    
+    Iterator<Integer> iter = set.iterator();
+    
+    // iterator를 list 안에 담고
+    for (int i = 0; iter.hasNext(); i++) {
+      list.add(iter.next());
+    }
+    
+    // reverseOrder()로 역정렬을 합니다.
+    list.sort(Comparator.reverseOrder());
+    
+    System.out.println("일반방법으로 출력 : " + list.toString());
+    
+    /* Stream을 사용하는 경우 */
+    System.out.println("Stream으로 출력 : " + 
+            Arrays.stream(arr).boxed() // Stream을 생성하고
+            .distinct() // 중복을 제거하고
+            .sorted(Comparator.reverseOrder()) // 역정렬 한 다음
+            .collect(Collectors.toList()) // List로 반환합니다.
+    ); 
+  }
+
+}
